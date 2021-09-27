@@ -5,9 +5,9 @@ account: abhijeet-katiyar
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4732031
-bundleId: 5075797
+bundleId: 5076429
 url: https://abhijeet-katiyar.shinyapps.io/Covid19_India/
-when: 1632729790.33522
-lastSyncTime: 1632729790.33522
+when: 1632745227.29806
+lastSyncTime: 1632745227.29806
 asMultiple: FALSE
 asStatic: FALSE

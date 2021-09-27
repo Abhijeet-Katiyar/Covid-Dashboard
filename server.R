@@ -13,6 +13,7 @@ library(plotly)
 library(dplyr)
 library(tidyverse)
 
+
 source("DataPreprocessing.R")
 data <- read_csv("covid_19_india.csv")
 data <- clean(data)
@@ -33,21 +34,24 @@ server <- function(input, output) {
     })
     
     output$dailyPlot <- renderPlotly({
-        ggplotly(filter(data,StateAndUnionTerritories == input$state) %>%
+        ggplotly(
+            filter(data,StateAndUnionTerritories == input$state) %>%
                      ggplot(aes_string(x = "Date", y = results()[1], group = "1")) +
                      geom_area(fill=results()[3], alpha=0.5) +
                      geom_line(color=results()[3]) +
                      ylab(results()[4]) +
-                     scale_x_date(date_breaks = "4 weeks", date_labels = "%b-%Y") + 
-                     theme(axis.text.x = element_text(angle=90)))
+                     scale_x_date(date_breaks = "1 month", date_labels = "%b-%Y") + 
+                     theme(axis.text.x = element_text(angle=90))
+            ) 
         
     })
     output$cumulativePlot <- renderPlotly({
         ggplotly(filter(data,StateAndUnionTerritories == input$state) %>%
                      ggplot(aes_string(x = "Date", y = results()[2], group = "1")) +
                      geom_line(color=results()[3]) +
-                     ylab(results()[5]) + scale_x_date(date_breaks = "4 weeks", date_labels = "%b-%Y") + 
-                     theme(axis.text.x = element_text(angle=90)))
+                     ylab(results()[5]) + scale_x_date(date_breaks = "1 months", date_labels = "%b-%Y") + 
+                     theme(axis.text.x = element_text(angle=90))
+                 )
     })
     
 }

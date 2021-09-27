@@ -3,6 +3,7 @@ clean <- function(data) {
   library(dplyr)
   
   data$Date <- as.Date(data$Date,format = "%d-%m-%Y")
+  
   data <- rename(data, "StateAndUnionTerritories" = "State/UnionTerritory")
   
   data <- data %>% group_by(StateAndUnionTerritories) %>% 

@@ -28,10 +28,14 @@ ui <- fluidPage(theme = shinytheme("cerulean"),
            selectInput("condition","Select Filter", choices = c("Confirmed", "Deaths", "Cured"))
     ),
     column(12,
-           plotlyOutput("dailyPlot", width = "auto", height="365")
+           plotlyOutput("dailyPlot", width = "auto", height="400")
     ),
     column(12,
-           plotlyOutput("cumulativePlot", width = "auto", height = "365")
-    )
+           plotlyOutput("cumulativePlot", width = "auto", height = "400")
+    ),
+    column(4,
+           shiny::actionButton(inputId='ab1', label="Source code", 
+                               icon = icon("th"), 
+                               onclick ="window.open('https://github.com/Abhijeet-Katiyar/Covid-Dashboard', '_blank')"))
   )
 )
