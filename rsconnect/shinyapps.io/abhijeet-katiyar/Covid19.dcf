@@ -1,0 +1,13 @@
+name: Covid19
+title: Covid19
+username:
+account: abhijeet-katiyar
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4731357
+bundleId: 5071076
+url: https://abhijeet-katiyar.shinyapps.io/Covid19/
+when: 1632571395.96465
+lastSyncTime: 1632571395.96465
+asMultiple: FALSE
+asStatic: FALSE
